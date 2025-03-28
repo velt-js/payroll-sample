@@ -344,7 +344,21 @@ export default function PayrollInterface() {
           <div></div>
           <div className="flex items-center">
             <VeltSidebarButton />
-            <VeltNotificationsTool shadowDom={false} />
+            <VeltNotificationsTool shadowDom={false} tabConfig={{
+                "forYou": {
+                    name: 'For You',
+                    enable: true,
+                },
+                "documents": {
+                    name: 'Payrolls',
+                    enable: true,
+                },
+                "all": {
+                    name: 'All',
+                    enable: true,
+                },
+              }}
+            />
             <div className="flex items-center">
               <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user">
