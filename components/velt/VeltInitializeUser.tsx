@@ -4,10 +4,28 @@ import { useVeltClient } from '@veltdev/react';
 // [VELT] Initializes the current signed in user in Velt.
 export default function VeltInitializeUser() {
   const { client } = useVeltClient();
+  // const hardcodedUser = {
+  //   userId: 'user-4',
+  //   name: 'Dwight Schrute',
+  //   email: 'dwight@example.com',
+  //   color: '#FF5733',
+  //   textColor: '#FFFFFF',
+  //   organizationId: 'payroll-review-org-1'
+  // };
+
+  // const hardcodedUser = {
+  //   userId: 'user-2',
+  //   name: 'Bridgette Haymaker',
+  //   email: 'bridgette@example.com',
+  //   color: '#FF5733',
+  //   textColor: '#FFFFFF',
+  //   organizationId: 'payroll-review-org-1'
+  // };
+
   const hardcodedUser = {
-    userId: 'user-1',
-    name: 'John Doe',
-    email: 'john.doe@example.com',
+    userId: 'user-3',
+    name: 'Eric Harris',
+    email: 'eric@example.com',
     color: '#FF5733',
     textColor: '#FFFFFF',
     organizationId: 'payroll-review-org-1'

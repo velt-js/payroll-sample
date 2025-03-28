@@ -8,7 +8,7 @@ export default function VeltInitializeDocument() {
     {
       id: 'payroll-review',
       metadata: {
-        documentName: 'Payroll Review'
+        documentName: 'Payroll: Jan 1-15, 2022'
       }
     },
   ], []);
