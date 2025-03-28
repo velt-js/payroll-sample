@@ -344,7 +344,7 @@ export default function PayrollInterface() {
           <div></div>
           <div className="flex items-center">
             <VeltSidebarButton />
-            <VeltNotificationsTool />
+            <VeltNotificationsTool shadowDom={false} />
             <div className="flex items-center">
               <div className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center text-gray-600 mr-2">
                 <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-user">
@@ -727,67 +727,67 @@ export default function PayrollInterface() {
                         </td>
                         <td id={`emp-name-${employee.id}`} className="p-3 border-r border-gray-200 relative group">
                           <span className="font-medium text-teal-500">{employee.name}</span>
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-name-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-pay-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.totalPay)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-pay-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-rate-${employee.id}`} className="p-3 border-r border-gray-200 relative group">
                           {employee.rate}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-rate-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-reg-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.regularHrs)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-reg-hrs-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-ot-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.overtimeHrs)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-ot-hrs-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-pto-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.ptoHrs)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-pto-hrs-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-sick-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.sickTimeOffHrs)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-sick-hrs-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-bonus-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.bonus)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-bonus-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-commission-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.commission)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-commission-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-add-earnings-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.additionalEarnings)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-add-earnings-${employee.id}`} />
                           </div>
                         </td>
                         <td id={`emp-reimburse-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.reimbursement)}
-                          <div className="absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                          <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
                             <VeltCommentTool targetElementId={`emp-reimburse-${employee.id}`} />
                           </div>
                         </td>

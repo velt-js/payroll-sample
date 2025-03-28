@@ -1,0 +1,48 @@
+body {
+    /* Theme Configuration */
+
+    /* Border Radius */
+    --velt-border-radius-2xs: 0.094rem;
+    --velt-border-radius-xs: 0.188rem;
+    --velt-border-radius-sm: 0.375rem;
+    --velt-border-radius-md: 0.563rem;
+    --velt-border-radius-lg: 0.750rem;
+    --velt-border-radius-xl: 0.938rem;
+    --velt-border-radius-2xl: 1.125rem;
+    --velt-border-radius-3xl: 1.500rem;
+    --velt-border-radius-full: 3.750rem;
+
+    /* Light Mode Accent Colors */
+    --velt-light-mode-accent: #0a8080;
+    --velt-light-mode-accent-text: #0a8080;
+    --velt-light-mode-accent-hover: #004d4d;
+    --velt-light-mode-accent-light: #f3f9f9;
+    --velt-light-mode-accent-transparent: rgba(10, 128, 128, 0.08);
+
+    /* Dark Mode Accent Colors */
+    --velt-dark-mode-accent: #0a8080;
+    --velt-dark-mode-accent-text: #18b7b7;
+    --velt-dark-mode-accent-hover: #004d4d;
+    --velt-dark-mode-accent-light: #f3f9f9;
+    --velt-dark-mode-accent-transparent: rgba(10, 128, 128, 0.08);
+}
+
+.comment-tool-container {
+    background-color: var(--velt-light-mode-background-0);
+    top: 50%;
+    margin-right: 0.25rem;
+    transform: translateY(-50%);
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+velt-comment-tool, velt-notifications-tool {
+    display: flex !important;
+}
+
+.velt-sidebar-button--comments-count {
+    min-width: auto !important;
+}
