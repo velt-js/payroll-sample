@@ -343,7 +343,9 @@ export default function PayrollInterface() {
         <header className="flex justify-between items-center p-4 border-b border-gray-200">
           <div></div>
           <div className="flex items-center">
+            {/* [VELT] Sidebar button */}
             <VeltSidebarButton />
+            {/* [VELT] Notifications tool */}
             <VeltNotificationsTool shadowDom={false} tabConfig={{
                 "forYou": {
                     name: 'For You',
@@ -739,69 +741,91 @@ export default function PayrollInterface() {
                             </div>
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-name-${employee.id}`} className="p-3 border-r border-gray-200 relative group">
                           <span className="font-medium text-teal-500">{employee.name}</span>
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-name-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-pay-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.totalPay)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-pay-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-rate-${employee.id}`} className="p-3 border-r border-gray-200 relative group">
                           {employee.rate}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-rate-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-reg-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.regularHrs)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-reg-hrs-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-ot-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.overtimeHrs)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-ot-hrs-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-pto-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.ptoHrs)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-pto-hrs-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-sick-hrs-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatNumber(employee.sickTimeOffHrs)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-sick-hrs-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-bonus-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.bonus)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-bonus-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-commission-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.commission)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-commission-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-add-earnings-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.additionalEarnings)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                            {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-add-earnings-${employee.id}`} />
                           </div>
                         </td>
+                        {/* [VELT] Set the DOM ID as record ID to bind the comments to the record */}
                         <td id={`emp-reimburse-${employee.id}`} className="p-3 text-right border-r border-gray-200 relative group">
                           {formatCurrency(employee.reimbursement)}
                           <div className="comment-tool-container absolute top-0 right-0 opacity-0 group-hover:opacity-100 transition-opacity">
+                             {/* [VELT] Comment tool */}
                             <VeltCommentTool targetElementId={`emp-reimburse-${employee.id}`} />
                           </div>
                         </td>
