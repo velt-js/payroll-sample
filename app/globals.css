@@ -34,12 +34,12 @@
 
     --radius: 0.5rem;
 
-    /* Gusto specific colors */
-    --gusto-teal: 174 70% 45%;
-    --gusto-red: 0 84% 60%;
-    --gusto-gray-light: 210 20% 98%;
-    --gusto-gray-border: 220 13% 91%;
-    --gusto-gray-text: 220 9% 46%;
+    /* App specific colors */
+    --app-teal: 174 70% 45%;
+    --app-red: 0 84% 60%;
+    --app-gray-light: 210 20% 98%;
+    --app-gray-border: 220 13% 91%;
+    --app-gray-text: 220 9% 46%;
   }
 
   .dark {
@@ -82,37 +82,37 @@
   }
 }
 
-/* Custom styles for Gusto interface */
-.gusto-table {
+/* Custom styles for App interface */
+.app-table {
   @apply w-full border-collapse;
 }
 
-.gusto-table th {
+.app-table th {
   @apply p-3 text-left font-medium text-gray-500 border-l border-gray-200;
 }
 
-.gusto-table td {
+.app-table td {
   @apply p-3 border-r border-gray-200;
 }
 
-.gusto-table tr {
+.app-table tr {
   @apply border-b border-gray-200;
 }
 
-.gusto-table th:first-child,
-.gusto-table td:first-child {
+.app-table th:first-child,
+.app-table td:first-child {
   @apply border-l-0;
 }
 
-.gusto-employee-name {
+.app-employee-name {
   @apply font-medium text-teal-500;
 }
 
-.gusto-checkbox {
+.app-checkbox {
   @apply w-4 h-4 border border-gray-300 rounded cursor-pointer;
 }
 
-.gusto-checkbox-checked {
+.app-checkbox-checked {
   @apply bg-blue-500 border-blue-500;
 }
 

@@ -6,7 +6,7 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
-  title: "Gusto Payroll",
+  title: "Payroll",
   description: "Payroll management interface",
     generator: 'v0.dev'
 }

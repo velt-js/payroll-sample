@@ -248,7 +248,7 @@ export default function PayrollInterface() {
       {/* Sidebar */}
       <div className="w-[220px] border-r border-gray-200 flex flex-col">
         <div className="p-4 border-b border-gray-200">
-          <img src="/placeholder.svg?height=40&width=100" alt="Gusto Logo" className="h-10" />
+          <img src="/placeholder.svg?height=40&width=100" alt="Your Logo" className="h-10" />
         </div>
 
         {/* Sidebar */}
