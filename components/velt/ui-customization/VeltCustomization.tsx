@@ -1,4 +1,4 @@
-import { VeltCommentDialogWireframe, VeltWireframe } from '@veltdev/react';
+import { VeltCommentDialogWireframe, VeltNotificationsPanelWireframe, VeltWireframe } from '@veltdev/react';
 import VeltSidebarButtonWf from './VeltSidebarButtonWf';
 import VeltCommentToolWf from './VeltCommentToolWf';
 import VeltCommentBubbleWf from './VeltCommentBubbleWf';
