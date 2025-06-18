@@ -25,9 +25,7 @@ const VeltSidebarSubscribeActionButton = () => {
   useEffect(() => {
     if (notificationElement && documentInitEvent) {
       console.log('debug: setting settings initial config');
-      const settings = notificationElement.getSettings() ?? null;
-      console.log('debug: current settings', settings);
-      setSettings(settings);
+      console.log('debug: system default settings', notificationElement.getSettings());
       notificationElement.setSettingsInitialConfig([
         {
           name: "Email",
@@ -69,7 +67,14 @@ const VeltSidebarSubscribeActionButton = () => {
             },
           ],
         },
-      ])
+      ]);
+      console.log('debug: app default settings', notificationElement.getSettings());
+
+      setTimeout(() => {
+        console.log('debug: user settings', notificationElement.getSettings());
+        const settings = notificationElement.getSettings() ?? null;
+        setSettings(settings);
+      }, 1000);
     }
   }, [notificationElement, documentInitEvent])
 
