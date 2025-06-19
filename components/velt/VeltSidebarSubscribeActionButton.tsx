@@ -1,7 +1,7 @@
 "use client"
 
 import { IconBell, IconBellOff } from "@tabler/icons-react"
-import { useNotificationUtils, useVeltEventCallback } from "@veltdev/react"
+import { useNotificationSettings, useNotificationUtils, useVeltEventCallback } from "@veltdev/react"
 import { NotificationSettingsConfig } from "@veltdev/types"
 import { useEffect, useState } from "react"
 import SidebarActionButton from "./SidebarActionButton"
@@ -13,20 +13,21 @@ enum NotificationSettingValues {
 }
 
 const VeltSidebarSubscribeActionButton = () => {
-  const [settings, setSettings] = useState<NotificationSettingsConfig | null>(
+  const [localSettings, setLocalSettings] = useState<NotificationSettingsConfig | null>(
     null
   )
 
   const documentInitEvent = useVeltEventCallback('documentInit');
-  console.log('debug: documentInit', documentInitEvent);
+  const {setSettingsInitialConfig,setSettings, settings} = useNotificationSettings();
 
-  const notificationElement = useNotificationUtils()
 
+  // [VELT]: Set the initial settings for the document when the document is initialized
   useEffect(() => {
-    if (notificationElement && documentInitEvent) {
+    if (documentInitEvent && setSettingsInitialConfig) {
+      console.log('debug: documentInit', documentInitEvent);
+
       console.log('debug: setting settings initial config');
-      console.log('debug: system default settings', notificationElement.getSettings());
-      notificationElement.setSettingsInitialConfig([
+      setSettingsInitialConfig([
         {
           name: "Email",
           id: "email",
@@ -68,15 +69,24 @@ const VeltSidebarSubscribeActionButton = () => {
           ],
         },
       ]);
-      console.log('debug: app default settings', notificationElement.getSettings());
-
-      setTimeout(() => {
-        console.log('debug: user settings', notificationElement.getSettings());
-        const settings = notificationElement.getSettings() ?? null;
-        setSettings(settings);
-      }, 1000);
     }
-  }, [notificationElement, documentInitEvent])
+  }, [setSettingsInitialConfig, documentInitEvent])
+
+  // [VELT]: Update the local settings from the server settings when the server settings are updated
+  useEffect(() => {
+    if (settings) {
+      console.log('debug: server settings', settings);
+      console.log('debug: updating local settings from server');
+      setLocalSettings(settings);
+    }
+  }, [settings])
+
+  // [VELT]: Log the local settings when it actually updates
+  useEffect(() => {
+    if (localSettings) {
+      console.log('debug: localSettings state updated to:', localSettings);
+    }
+  }, [localSettings])
 
   return (
     <SidebarActionButton
@@ -84,27 +94,20 @@ const VeltSidebarSubscribeActionButton = () => {
       label={settings?.email === NotificationSettingValues.MINE || settings?.email === NotificationSettingValues.ALL ? 'Unsubscribe' : 'Subscribe'}
       tooltip={settings?.email === NotificationSettingValues.MINE || settings?.email === NotificationSettingValues.ALL ? 'Unsubscribe from notifications for this record' : 'Subscribe to notifications for this record'}
       onClick={() => {
-        console.log('debug: settings', settings);
         if (settings?.email === NotificationSettingValues.MINE) {
-          notificationElement?.setSettings({
-            email: NotificationSettingValues.NONE,
-            inbox: NotificationSettingValues.NONE,
-          });
+          // [VELT]: Only update the server settings here
           setSettings({
             email: NotificationSettingValues.NONE,
             inbox: NotificationSettingValues.NONE,
           });
-          console.log('debug: disabling notifications', notificationElement?.getSettings());
+          console.log('debug: disabling notifications');
         } else {
-          notificationElement?.setSettings({
-            email: NotificationSettingValues.MINE,
-            inbox: NotificationSettingValues.MINE,
-          });
+          // [VELT]: Only update the server settings here
           setSettings({
             email: NotificationSettingValues.MINE,
             inbox: NotificationSettingValues.MINE,
           });
-          console.log('debug: enabling notifications', notificationElement?.getSettings());
+          console.log('debug: enabling notifications');
         }
       }}
     />
