@@ -1,14 +1,12 @@
 "use client"
 
 import { VeltSidebarButton, VeltNotificationsTool } from "@veltdev/react"
-import VeltSidebarSubscribeActionButton from "./VeltSidebarSubscribeActionButton"
 
 export default function VeltTools() {
   return (
     <>
       {/* [VELT] Sidebar button */}
       <VeltSidebarButton />
-      <VeltSidebarSubscribeActionButton />
       {/* [VELT] Notifications tool */}
       <VeltNotificationsTool
         settings={true}
