@@ -6,10 +6,15 @@ import './velt.css';
 // [VELT] Installs Velt's root feature components with config, authenticates the user, initializes the document.
 
 export const VeltCollaboration = () => {
+  const groupConfig = {
+    enable: false,
+  };
   return (
     <>
       <VeltInitializeUser />
+      <VeltInitializeDocument />
       <VeltComments
+        allowedFileTypes={['svg']}
         recordings="audio"
         ghostCommentsIndicator={false}
         deleteOnBackspace={false}
@@ -22,8 +27,8 @@ export const VeltCollaboration = () => {
         shadowDom={false}
         priority={true}
       />
-      <VeltCommentsSidebar />
-      <VeltInitializeDocument />
+
+<VeltCommentsSidebar groupConfig={groupConfig} />
       <VeltCustomization />
     </>
   );

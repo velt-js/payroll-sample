@@ -5,7 +5,7 @@ import { useVeltClient } from '@veltdev/react';
 export default function VeltInitializeUser() {
   const { client } = useVeltClient();
   const hardcodedUser = {
-    userId: 'user-4',
+    userId: 'user-5',
     name: 'Dwight Schrute',
     email: 'dwight@example.com',
     color: '#FF5733',

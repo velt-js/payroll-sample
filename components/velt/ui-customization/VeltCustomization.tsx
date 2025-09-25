@@ -12,6 +12,7 @@ const VeltCustomization = () => {
       <VeltCommentBubbleWf />
       <VeltNotificationToolWF />
       {/* <VeltCommentDialogWireframe.Header veltIf='{false}' /> */}
+      <VeltNotificationsPanelWireframe.Header veltIf='{false}' />
     </VeltWireframe>
   );
 };
